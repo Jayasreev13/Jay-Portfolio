@@ -300,6 +300,48 @@ h1.name .gold{
   .achievement-image{height:140px}
   .achievement-icon{font-size:2.8rem}
 }  
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:3rem}
+.project-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:2rem;display:flex;flex-direction:column;gap:1.2rem;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.project-card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 12px 35px rgba(201,168,76,.2)}
+.project-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.project-icon{
+  width:60px;height:60px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;
+}
+.project-category{
+  display:inline-flex;align-self:flex-start;
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:.35rem .85rem;border-radius:6px;border:1px solid;white-space:nowrap;
+}
+.project-title{font-family:var(--head);font-size:1.1rem;font-weight:700;line-height:1.35;color:var(--text)}
+.project-desc{font-size:.9rem;color:var(--muted);line-height:1.75}
+.project-tech{display:flex;flex-wrap:wrap;gap:.5rem}
+.tech-tag{
+  font-size:.7rem;font-weight:600;padding:.25rem .65rem;border-radius:4px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  color:var(--muted);transition:border-color .2s,color .2s;
+}
+.project-card:hover .tech-tag{border-color:var(--gold);color:var(--gold2)}
+.project-features{
+  display:flex;flex-direction:column;gap:.45rem;
+  padding-top:1rem;border-top:1px solid rgba(201,168,76,.1);
+}
+.feature{font-size:.82rem;color:rgba(240,244,255,.75);display:flex;align-items:center;gap:.5rem;font-weight:500}
+
+@media(max-width:960px){
+  .projects-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+}
+@media(max-width:600px){
+  .projects-grid{grid-template-columns:1fr}
+  .project-card{padding:1.5rem}
+  .project-title{font-size:1rem}
+}  
 /* ── SECTION BASE ── */
 .section{padding:5.5rem 5%;max-width:1200px;margin:0 auto}
 .full{padding:5.5rem 5%}
@@ -520,6 +562,7 @@ footer{
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li> 
     <li><a href="#education">Education</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#research">Research</a></li>
@@ -978,7 +1021,250 @@ footer{
   </div>
 </div>
 </div>
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<div class="section" id="projects">
+  <div class="s-header reveal">
+    <div class="s-eyebrow" style="color:var(--sky)">
+      <span class="line" style="background:var(--sky)"></span>AI Projects & Solutions
+    </div>
+    <h2 class="s-title">Innovation in Action</h2>
+    <p class="s-desc">End-to-end AI/ML solutions developed across healthcare, fintech, manufacturing, mental health, and enterprise sectors. From concept to deployment with real-world impact.</p>
+  </div>
 
+  <div class="projects-grid">
+
+    <!-- Project 1: E-Doctor Alexa -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(61,217,179,.12)">🏥</div>
+        <div class="project-category" style="background:rgba(61,217,179,.1);border-color:rgba(61,217,179,.3);color:var(--mint)">Healthcare</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">E-Doctor Alexa Project</h3>
+        <p class="project-desc">Voice-enabled healthcare bot allowing patients to book hospital appointments and discuss basic health issues through Alexa integration.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Alexa</span>
+          <span class="tech-tag">NLU</span>
+          <span class="tech-tag">Healthcare API</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Voice Appointment Booking</span>
+          <span class="feature">✓ Health Discussion Bot</span>
+          <span class="feature">✓ Intelligent Routing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: AI Decision Tool for Payroll -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(77,184,255,.12)">💰</div>
+        <div class="project-category" style="background:rgba(77,184,255,.1);border-color:rgba(77,184,255,.3);color:var(--sky)">FinTech</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">AI Decision Tool for Payroll Reconciliation</h3>
+        <p class="project-desc">Automatically identifies net pay discrepancies using pattern-matching AI to suggest root causes and recommend corrective actions.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Pattern Matching</span>
+          <span class="tech-tag">ML Classification</span>
+          <span class="tech-tag">Data Analysis</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Anomaly Detection</span>
+          <span class="feature">✓ Root Cause Analysis</span>
+          <span class="feature">✓ Automated Recommendations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: AI PCB Inspection Tool -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(255,107,138,.12)">🔧</div>
+        <div class="project-category" style="background:rgba(255,107,138,.1);border-color:rgba(255,107,138,.3);color:var(--rose)">Manufacturing</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">AI PCB Inspection Tool</h3>
+        <p class="project-desc">Detects printed circuit board defects using YOLOv5 model trained on 6 defect categories with high accuracy on custom datasets.</p>
+        <div class="project-tech">
+          <span class="tech-tag">YOLOv5</span>
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">Deep Learning</span>
+          <span class="tech-tag">PyTorch</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ 6-Class Defect Detection</span>
+          <span class="feature">✓ Real-time Inspection</span>
+          <span class="feature">✓ Component Recognition</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: AI Stock Forecaster App -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(201,168,76,.12)">📈</div>
+        <div class="project-category" style="background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3);color:var(--gold2)">FinTech</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">AI Stock Forecaster App</h3>
+        <p class="project-desc">Analyzes news sentiment and historical market data to recommend short-term stock opportunities and predict future prices.</p>
+        <div class="project-tech">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Sentiment Analysis</span>
+          <span class="tech-tag">Time Series</span>
+          <span class="tech-tag">LSTM</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ News Sentiment Analysis</span>
+          <span class="feature">✓ Price Forecasting</span>
+          <span class="feature">✓ Investment Recommendations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: AI Hairstyle Recommendation App -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(167,139,250,.12)">💇</div>
+        <div class="project-category" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--lavender)">Consumer</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">AI Hairstyle Recommendation App</h3>
+        <p class="project-desc">Users upload hairstyle images and receive recommendations for visually similar styles using image similarity and computer vision.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">Image Similarity</span>
+          <span class="tech-tag">CNN</span>
+          <span class="tech-tag">TensorFlow</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Image Upload & Analysis</span>
+          <span class="feature">✓ Visual Matching</span>
+          <span class="feature">✓ Style Recommendations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6: AI Contract Recommendation System -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(61,217,179,.12)">📋</div>
+        <div class="project-category" style="background:rgba(61,217,179,.1);border-color:rgba(61,217,179,.3);color:var(--mint)">Enterprise</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">AI-Based Contract Recommendation System</h3>
+        <p class="project-desc">Helps tender management by recommending relevant contract documents and templates using AI-driven requirement analysis.</p>
+        <div class="project-tech">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Document Analysis</span>
+          <span class="tech-tag">Similarity Matching</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Requirement Analysis</span>
+          <span class="feature">✓ Template Matching</span>
+          <span class="feature">✓ Tender Management</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 7: Nudge-Generating Bot -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(255,107,138,.12)">🧠</div>
+        <div class="project-category" style="background:rgba(255,107,138,.1);border-color:rgba(255,107,138,.3);color:var(--rose)">Mental Health</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Nudge-Generating Bot for Mental Health Wellness</h3>
+        <p class="project-desc">Reads user stories and generates personalized wellness nudges supporting mental wellbeing with timely behavioral prompts.</p>
+        <div class="project-tech">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Text Generation</span>
+          <span class="tech-tag">LLM</span>
+          <span class="tech-tag">Personalization</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Story Analysis</span>
+          <span class="feature">✓ Personalized Nudges</span>
+          <span class="feature">✓ Wellbeing Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 8: Mental Wellbeing Chatbot -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(77,184,255,.12)">💬</div>
+        <div class="project-category" style="background:rgba(77,184,255,.1);border-color:rgba(77,184,255,.3);color:var(--sky)">Mental Health</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Mental Wellbeing Chatbot & Signpost Recommender</h3>
+        <p class="project-desc">Employee chatbot answering wellbeing questions and directing staff to internal/external resources with confidential guidance.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Conversational AI</span>
+          <span class="tech-tag">Chatbot</span>
+          <span class="tech-tag">Resource Matching</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Q&A Support</span>
+          <span class="feature">✓ Resource Signposting</span>
+          <span class="feature">✓ Confidential Guidance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 9: Cybersecurity Report Generator -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(201,168,76,.12)">🔐</div>
+        <div class="project-category" style="background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3);color:var(--gold2)">Security</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Automated Cybersecurity Check Report Generator</h3>
+        <p class="project-desc">Analyzes cybersecurity data and automatically generates detailed security reports with consistent, accurate compliance documentation.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Data Analysis</span>
+          <span class="tech-tag">Report Generation</span>
+          <span class="tech-tag">Automation</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Data Analysis</span>
+          <span class="feature">✓ Automated Reports</span>
+          <span class="feature">✓ Compliance Tracking</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 10: Job Role Scoring System -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(167,139,250,.12)">👔</div>
+        <div class="project-category" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--lavender)">HR/Talent</div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Human-in-the-Loop Job Role Scoring System</h3>
+        <p class="project-desc">Compares candidate profiles with job requirements to identify skill gaps and recommends relevant courses/certifications with human refinement.</p>
+        <div class="project-tech">
+          <span class="tech-tag">ML Classification</span>
+          <span class="tech-tag">Skill Matching</span>
+          <span class="tech-tag">Human-in-Loop</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-features">
+          <span class="feature">✓ Skill Gap Analysis</span>
+          <span class="feature">✓ Course Recommendations</span>
+          <span class="feature">✓ Human Review</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- ═══════════════ EDUCATION ═══════════════ -->
 <div class="section" id="education">
   <div class="s-header reveal">
